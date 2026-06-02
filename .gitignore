@@ -1,5 +1,9 @@
 ### R ###
 
+# Data directories
+r-scripts/data/*/*
+!r-scripts/data/*/.gitkeep
+
 # History files
 .Rhistory
 .Rapp.history
