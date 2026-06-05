@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: tyamadabiodataeng/jupyter-biodataeng-postgres
+    container_name: postgres
+    build:
+      context: ./postgres
+      dockerfile: ../dockerfiles/postgres/Dockerfile
+    environment:
+      - TZ=Asia/Tokyo
+    env_file:
+      - ./postgres/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - rstudio_biodataeng_pg_data:/var/lib/postgresql
+    networks:
+      - rstudio-biodataeng-network
+  rstudio:
+    image: tyamadabiodataeng/rstudio-biodataeng
+    container_name: rstudio
+    build:
+      context: .
+      dockerfile: ./dockerfiles/rstudio/Dockerfile
+    environment:
+      - TZ=Asia/Tokyo
+    env_file:
+        - ./.env
+    ports:
+     - "8787:8787"
+    volumes:
+     - ./r-scripts:/home/rstudio
+    tty: true
+    stdin_open: true
+    depends_on:
+      - postgres
+    networks:
+      - rstudio-biodataeng-network
+
+networks:
+  rstudio-biodataeng-network:
+    driver: bridge
+
+volumes:
+  rstudio_biodataeng_pg_data:
