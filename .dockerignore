@@ -1,6 +1,10 @@
 *.md
 r-scripts/data/
 
+# System files
+**/.*
+!**/.giekeep
+
 
 ### Docker ###
 
