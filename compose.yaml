@@ -30,7 +30,9 @@ services:
     ports:
       - "8787:8787"
     volumes:
-      - ./r-scripts:/home/rstudio
+      - ./r-scripts/analyses:/home/rstudio/analyses
+      - ./r-scripts/data:/home/rstudio/data
+      - ./r-scripts/reports:/home/rstudio/reports
     tty: true
     stdin_open: true
     depends_on:
