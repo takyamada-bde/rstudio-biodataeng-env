@@ -1,5 +1,6 @@
 services:
   postgres:
+    platform: linux/amd64
     image: tyamadabiodataeng/jupyter-biodataeng-postgres
     container_name: postgres
     build:
@@ -16,6 +17,7 @@ services:
     networks:
       - rstudio-biodataeng-network
   rstudio:
+    platform: linux/amd64
     image: tyamadabiodataeng/rstudio-biodataeng
     container_name: rstudio
     build:
@@ -24,11 +26,11 @@ services:
     environment:
       - TZ=Asia/Tokyo
     env_file:
-        - ./.env
+      - ./.env
     ports:
-     - "8787:8787"
+      - "8787:8787"
     volumes:
-     - ./r-scripts:/home/rstudio
+      - ./r-scripts:/home/rstudio
     tty: true
     stdin_open: true
     depends_on:
