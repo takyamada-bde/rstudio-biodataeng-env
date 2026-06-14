@@ -1,5 +1,9 @@
 ### R ###
 
+# System files
+**/.*
+!**/.giekeep
+
 # Data directories
 r-scripts/data/*/*
 !r-scripts/data/*/.gitkeep
