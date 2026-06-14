@@ -1,7 +1,7 @@
 services:
   postgres:
     platform: linux/amd64
-    image: tyamadabiodataeng/jupyter-biodataeng-postgres
+    image: tyamadabiodataeng/rstudio-biodataeng-postgres
     container_name: postgres
     build:
       context: ./postgres
