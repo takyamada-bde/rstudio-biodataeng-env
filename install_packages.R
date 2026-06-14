@@ -7,7 +7,7 @@ install.packages(c(
   "anndata",
   "Seurat",
   "Signac",
-  "WGCNA",
+  "WGCNA"
 ), dependencies = TRUE)
 
 BiocManager::install(c(
