@@ -2,8 +2,10 @@
 
 # System files
 **/.*
-!**/.giekeep
+!**/.dockerignore
 !**/.env.example
+!**/.gitignore
+!**/.gitkeep
 
 # Data directories
 r-scripts/data/*/*
