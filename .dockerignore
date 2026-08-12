@@ -3,7 +3,8 @@ r-scripts/data/
 
 # System files
 **/.*
-!**/.giekeep
+!**/.github
+!**/.gitkeep
 
 
 ### Docker ###
