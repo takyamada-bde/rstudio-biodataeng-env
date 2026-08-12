@@ -3,7 +3,6 @@ r-scripts/data/
 
 # System files
 **/.*
-!**/.github
 !**/.gitkeep
 
 
